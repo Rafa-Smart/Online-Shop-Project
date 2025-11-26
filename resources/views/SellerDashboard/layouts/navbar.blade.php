@@ -1,8 +1,10 @@
 <?php
 
-$orders = App\Models\Order::where('seller_id', Auth::user()->seller->id)
+$orders = App\Models\Order::where('seller_id', auth()->user()->seller->id)
     ->where('status', 'pending')
     ->get();
+    // dd(auth()->user()->seller->id);
+    // dd($orders)
 ?>
 <style>
     /* Avatar kecil di navbar */

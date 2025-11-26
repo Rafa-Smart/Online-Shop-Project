@@ -67,7 +67,7 @@ public function store(Request $request)
 public function indexPending()
 {
     // Ambil semua order pending untuk seller yang login
-    $orders = Order::where('seller_id', Auth::id())
+    $orders = Order::where('seller_id', Auth::user()->seller->id)
                     ->where('status', 'pending')
                     ->orderBy('created_at', 'desc')
                     ->get(); // collection
@@ -80,7 +80,7 @@ public function indexPending()
 public function approve(Order $order)
 {
     // Pastikan seller yang sedang login boleh approve
-    if ($order->seller_id != Auth::id()) {
+    if ($order->seller_id != Auth::user()->seller->id) {
         return redirect()->back()->with('error', 'Anda tidak memiliki akses.');
     }
 
@@ -94,7 +94,7 @@ public function approve(Order $order)
 
 public function cancel(Order $order)
 {
-    if ($order->seller_id != Auth::id()) {
+    if ($order->seller_id != Auth::user()->seller->id) {
         return redirect()->back()->with('error', 'Anda tidak memiliki akses.');
     }
 
