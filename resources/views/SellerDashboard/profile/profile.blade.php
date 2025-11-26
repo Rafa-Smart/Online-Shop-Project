@@ -4,7 +4,73 @@
 
 @section('content')
 
+<style>
+/* --- SIDEBAR --- */
+.profile-sidebar {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
 
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    object-fit: cover;
+    border: 3px solid #dedede;
+}
+
+.tab-button {
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.tab-button.active {
+    background: #0d6efd;
+    color: white;
+}
+
+/* --- TAB KANAN ala Tokopedia --- */
+.top-tabs {
+    display: flex;
+    gap: 40px;
+    position: relative;
+    border-bottom: 2px solid #e6e6e6;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+}
+
+.top-tab {
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    padding-bottom: 8px;
+    color: #333;
+}
+
+.top-tab.active {
+    color: #0d6efd;
+}
+
+.tab-indicator {
+    position: absolute;
+    bottom: -2px;
+    height: 3px;
+    width: 120px;
+    background: #0d6efd;
+    border-radius: 2px;
+    transition: all 0.35s ease;
+}
+
+/* --- KONTEN --- */
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+</style>
 
 <div class="container py-4">
     <div class="row">
@@ -15,7 +81,7 @@
 
                 {{-- FOTO PROFIL --}}
                 @if($seller->img)
-                    <img src="{{ asset('storage/profile_photos/'.$seller->img) }}" class="profile-photo mb-3">
+                    <img src="{{ asset('storage/seller_images/'.$seller->img) }}" class="profile-photo mb-3">
                 @else
                     <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" class="profile-photo mb-3">
                 @endif

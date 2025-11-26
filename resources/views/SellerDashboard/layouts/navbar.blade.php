@@ -211,7 +211,7 @@ $orders = App\Models\Order::where('seller_id', auth()->user()->seller->id)
         <div class="nav-user-card">
 
             <!-- Avatar Kecil -->
-            <img src="{{ asset('storage/profile_photos/' . optional(App\Models\Seller::where('user_id', Auth::user()->id)->first())->img) }}">
+            <img src="{{ asset('storage/seller_images/' . optional(App\Models\Seller::where('id', Auth::user()->seller->id)->first())->img) }}">
 
             <!-- Nama Toko -->
             <span class="nav-user-name d-none d-md-inline">
@@ -227,7 +227,7 @@ $orders = App\Models\Order::where('seller_id', auth()->user()->seller->id)
         <!-- Header -->
         <li class="p-3 text-center user-header">
 
-            <img src="{{ asset('storage/profile_photos/' . optional(App\Models\Seller::where('user_id', Auth::user()->id)->first())->img) }}"
+            <img src="{{ asset('storage/seller_images/' . optional(App\Models\Seller::where('id', Auth::user()->seller->id)->first())->img) }}"
                 class="user-image-big rounded-circle shadow mb-2">
 
             <h6 class="fw-bold text-dark mb-0 user-name-full">
