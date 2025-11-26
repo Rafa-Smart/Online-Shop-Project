@@ -36,12 +36,12 @@
         <textarea name="description" class="form-control" rows="4" required>{{ old('description', $product->description) }}</textarea>
     </div>
 
-    {{-- HARGA --}}
+    {{-- HARGA
     <div class="mb-3">
         <label class="form-label fw-bold">Harga</label>
         <input type="number" name="price" class="form-control"
                value="{{ old('price', $product->price) }}" required>
-    </div>
+    </div> --}}
 
     {{-- STOK --}}
     <div class="mb-3">

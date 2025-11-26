@@ -16,11 +16,11 @@
         <input type="text" name="product_name" class="form-control" required>
     </div>
 
-    {{-- HARGA --}}
-    <div class="mb-3">
-        <label class="form-label">Harga</label>
-        <input type="number" name="price" class="form-control" required>
-    </div>
+        {{-- HARGA
+        <div class="mb-3">
+            <label class="form-label">Harga</label>
+            <input type="number" name="price" class="form-control" required>
+        </div> --}}
 
     {{-- STOK --}}
     <div class="mb-3">
