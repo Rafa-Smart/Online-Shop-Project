@@ -10,11 +10,13 @@ use App\Http\Controllers\SellerController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\SellerProfileController;
 use App\Http\Controllers\DashboardSellerController;
+use App\Http\Controllers\MidtransCallbackController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 
 Route::get('/', function () {
@@ -168,5 +170,11 @@ Route::get('/seller/logout', [SellerProfileController::class, 'deleteAccount'])-
  Route::get('/seller/ads', [AdController::class, 'index'])->name('ads.index');
  Route::get('/seller/ads/create', [AdController::class, 'create'])->name('ads.create');
  Route::post('/seller/ads/store', [AdController::class, 'store'])->name('ads.store');
+
+
+    // midtrans
+    Route::post('/checkout', [CheckoutController::class, 'checkout']);
+Route::post('/midtrans/callback', [MidtransCallbackController::class, 'handle']);
+
 
 });
