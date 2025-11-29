@@ -36,6 +36,7 @@ class SellerProfileController extends Controller
             'description' => 'nullable|string',
             'phone_number' => 'required|string|max:20',
             'name' => 'required|string|max:100',
+            'low_stock_threshold' => 'required|integer|min:1',
         ]);
 
         // Update user name
@@ -48,6 +49,7 @@ class SellerProfileController extends Controller
             'store_name' => $request->store_name,
             'description' => $request->description,
             'phone_number' => $request->phone_number,
+            'low_stock_threshold' => $request->low_stock_threshold,
         ]);
 
         return back()->with('success', 'Profil berhasil diperbarui!');

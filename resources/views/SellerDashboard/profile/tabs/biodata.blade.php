@@ -35,6 +35,16 @@
                     <label class="fw-bold">Deskripsi Toko</label>
                     <textarea name="description" class="form-control" rows="4">{{ $seller->description }}</textarea>
                 </div>
+                <div class="mb-3">
+    <label class="form-label">Minimal Stok (Threshold)</label>
+    <input type="number" name="low_stock_threshold"
+           value="{{ $seller->low_stock_threshold }}"
+           min="1"
+           class="form-control">
+    <small class="text-muted">
+        Notifikasi low stock akan muncul ketika stok ≤ nilai ini.
+    </small>
+</div>
 
             </div>
 

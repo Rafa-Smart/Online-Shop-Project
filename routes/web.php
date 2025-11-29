@@ -16,9 +16,10 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\GoogleController;
 use App\Http\Controllers\SellerProfileController;
 use App\Http\Controllers\DashboardSellerController;
+use App\Http\Controllers\StockManagementController;
+use App\Http\Controllers\CustomerInsightsController;
 use App\Http\Controllers\MidtransCallbackController;
 use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\CustomerInsightsController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -195,4 +196,9 @@ Route::get('/payment/pending', function () {
 Route::get('/seller/customer-insights', [CustomerInsightsController::class, 'index'])
         ->name('seller.customer.insights');
 
+        Route::get('/seller/stock-management', [StockManagementController::class, 'index'])
+    ->name('seller.stock.management');
+
+Route::post('/seller/stock-management/update/{product}', [StockManagementController::class, 'updateStock'])
+    ->name('seller.stock.update');
 });

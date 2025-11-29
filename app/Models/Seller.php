@@ -15,6 +15,7 @@ class Seller extends Model
         'description',
         'phone_number',
         'img',
+         'low_stock_threshold',
     ];
 
     // 🔗 Relasi ke User
